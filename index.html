@@ -1,12 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link rel="icon" href="https://cdn.discordapp.com/avatars/1311740022596304897/1b54a1e317a2176189f2c4377cbb7be3.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio ・ SvenrtSO</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/light-theme.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-    
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+        <img src="https://cdn.discordapp.com/avatars/1311740022596304897/1b54a1e317a2176189f2c4377cbb7be3.png">
+    </div>
+
+    <ul class="sidebar-nav">
+        <li>
+            <a href="#about" class="nav-link active">
+                <i class="fas fa-user"></i>
+                <span class="nav-text">Sobre mí</span>
+            </a>
+        </li>
+        <li>
+            <a href="#services" class="nav-link">
+                <i class="fas fa-code"></i>
+                <span class="nav-text">Servicios</span>
+            </a>
+        </li>
+        <li>
+            <a href="#experience" class="nav-link">
+                <i class="fas fa-briefcase"></i>
+                <span class="nav-text">Experiencia</span>
+            </a>
+        </li>
+        <li>
+            <a href="#contact" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                <span class="nav-text">Contacto</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- BOTÓN INFERIOR -->
+    <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-angle-right"></i>
+    </div>
+
+</aside>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-title">
+        Portafolio ・ <span id="color-red">SvenrtSO</span>
+    </div>
+
+    <div class="navbar-right">
+        <span id="clock">Reloj</span>
+    </div>
+</nav>
+
+<script>
+    const sidebar = document.querySelector(".sidebar");
+    const toggleBtn = document.getElementById("sidebarToggle");
+
+    toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("expanded");
+    });
+</script>
+
+<div class="sos">
+
+    <div id="particles-js"></div>
+
+    <div class="about-hero">
+        <div class="about neon-rojo-hover">
+            <h1 id="neon-rojo-hover">Sobre mi</h1>
+            <p>Hola, soy un <span id="neon-rojo-hover"><strong>Developer</strong></span> y <span
+                    id="neon-rojo-hover"><strong>Builder</strong></span> semi-profesional con experiencia en creación
+                <br>
+                y configuración de servidores de <span id="neon-rojo-hover"><strong>Discord</strong></span> y <span
+                    id="neon-rojo-hover"><strong>Minecraft</strong></span>, desarrollo <br>
+                de bots básicos de Discord y páginas web sin hosting.
+            </p>
+        </div>
+    </div>
+
+    <div class="servicios-hero neon-rojo-hover2">
+        <h1>Mis <span id="color-red">Servicios</span></h1>
+        <div class="servicios-1">
+            <div class="neon-rojo-hover servicios-card">
+                <img
+                    src="https://images.icon-icons.com/3132/PNG/512/discord_social_network_communication_interaction_message_icon_192260.png">
+                <h3 id="neon-rojo-hover">Servidores de Discord</h3>
+                <p>Creación y configuración de servidores de Discord desde cero, incluyendo canales, roles, permisos y
+                    ajustes básicos
+                    para una mejor organización.</p>
+            </div>
+            <div class="neon-rojo-hover servicios-card">
+                <img src="https://images.icon-icons.com/2699/PNG/512/minecraft_logo_icon_168974.png">
+                <h3 id="neon-rojo-hover">Servidores de Minecraft</h3>
+                <p>Configuración de servidores de Minecraft con ajustes iniciales, personalización básica y preparación
+                    para
+                    su correcto
+                    funcionamiento.</p>
+            </div>
+            <div class="neon-rojo-hover servicios-card">
+                <img
+                    src="https://images.icon-icons.com/3352/PNG/512/social_media_brand_logo_teamvoice_voice_discord_icon_210343.png">
+                <h3 id="neon-rojo-hover">Bots basicos de Discord</h3>
+                <p>Programación de bots básicos de Discord con comandos simples, funciones de moderación y
+                    automatización
+                    básica.</p>
+            </div>
+        </div>
+        <div class="servicios-2">
+            <div class="neon-rojo-hover servicios-card">
+                <img
+                    src="https://images.icon-icons.com/4076/PNG/512/web_programming_global_seo_www_network_internet_icon_258907.png">
+                <h3 id="neon-rojo-hover">Páginas Web sin Hosting</h3>
+                <p>Desarrollo de páginas web estáticas utilizando HTML, CSS y JavaScript básico, ideales para proyectos
+                    personales o
+                    portafolios.</p>
+            </div>
+            <div class="neon-rojo-hover servicios-card">
+                <img src="https://images.icon-icons.com/331/PNG/512/Settings_folder_35248.png">
+                <h3 id="neon-rojo-hover">Configuración y Ajustes Técnicos</h3>
+                <p>Optimización y ajustes técnicos básicos en proyectos y servidores para un funcionamiento estable.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="trabajos-hero">
+        <h1>Experiencia en <span id="color-red">Servidores</span></h1>
+        <div class="trabajos-1">
+            <div class="neon-rojo-hover trabajos-card">
+                <img src="https://cdn.discordapp.com/icons/1445030355848401038/f2b2da34f9a7b1ef8baeaae1be2f7b4d.png">
+                <h3 id="neon-rojo-hover">DeathList Studios</h3>
+                <div class="estado activo">
+                    <span class="punto"></span>Owner
+                </div>
+            </div>
+
+            <div class="neon-rojo-hover trabajos-card">
+                <img src="https://cdn.discordapp.com/icons/1336887298071199846/dc1b6b4db4c6ceaf5cb27ad7541f232b.png">
+                <h3 id="neon-rojo-hover">InfernumMC</h3>
+                <div class="estado activo">
+                    <span class="punto"></span>Developer
+                </div>
+            </div>
+
+            <div class="neon-rojo-hover trabajos-card">
+                <img src="https://cdn.discordapp.com/icons/1400265035950850049/4e1f746b0c7597eec74a8b388142e2d8.png">
+                <h3 id="neon-rojo-hover">LeviathanMC</h3>
+                <div class="estado inactivo">
+                    <span class="punto"></span>Ex-Developer
+                </div>
+            </div>
+        </div>
+
+        <div class="trabajos-2">
+            <div class="neon-rojo-hover trabajos-card">
+                <img src="https://cdn.discordapp.com/icons/1422438851883958342/c45f6e678ca0828f14e7b89c9a5354f3.png">
+                <h3 id="neon-rojo-hover">ArticMC Network</h3>
+                <div class="estado inactivo">
+                    <span class="punto"></span>Ex-Developer y Ex-Builder
+                </div>
+            </div>
+
+            <div class="neon-rojo-hover trabajos-card">
+                <img src="https://cdn.discordapp.com/icons/1309028069289230427/e19b772eadba7b1037c2e23285d68e15.png">
+                <h3 id="neon-rojo-hover">Nextasys</h3>
+                <div class="estado activo">
+                    <span class="punto"></span>Builder
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
+<footer>
+    <div class="line-footer"></div>
+
+    <div class="footer-container">
+        <h1 class="footer-title">
+            Portafolio ・ <span id="color-red">SvenrtSO</span>
+        </h1>
+
+        <div class="redes">
+            <a href="https://api.whatsapp.com/send?phone=573183918383" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@15.9.0/icons/whatsapp.svg">
+            </a>
+
+            <a href="https://discord.com/users/1311740022596304897" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@15.9.0/icons/discord.svg">
+            </a>
+        </div>
+
+        <p class="footer-copy">
+            © 2026 SvenrtSO. Todos los derechos reservados.
+        </p>
+    </div>
+</div>
+</footer>
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/script.js"></script>
+
 </html>
+<!-- <span id="clock">00:00:00</span> -->
