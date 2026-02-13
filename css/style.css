@@ -434,7 +434,7 @@ footer {
     top: 0;
     right: 0;
     width: calc(100% - var(--sidebar-width));
-    height: 70px;
+    height: 60px;
     background: rgba(17, 17, 17, 0.85);
     backdrop-filter: blur(12px);
     display: flex;
@@ -496,3 +496,4 @@ footer {
         box-shadow: 0 0 0 0 transparent;
     }
 }
+
