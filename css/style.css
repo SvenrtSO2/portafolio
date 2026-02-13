@@ -497,3 +497,115 @@ footer {
     }
 }
 
+@media (max-width: 1200px) {
+    .about-hero {
+        padding: 60px 50px 60px 20px;
+    }
+
+    .servicios-1, .servicios-2, .trabajos-1, .trabajos-2 {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about h1 {
+        font-size: 40px;
+    }
+
+    .servicios-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .trabajos-card {
+        width: 45%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 60px;
+    }
+
+    .sos {
+        margin-left: var(--sidebar-width);
+        padding-top: 70px;
+    }
+
+    .about-hero, .servicios-hero, .trabajos-hero {
+        padding: 40px 15px;
+    }
+
+    .about h1 {
+        font-size: 32px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .servicios-hero h1, .trabajos-hero h1 {
+        font-size: 30px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .servicios-1, .servicios-2, .trabajos-1, .trabajos-2 {
+        flex-direction: column;
+    }
+
+    .servicios-card, .trabajos-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .navbar-title {
+        font-size: 14px;
+    }
+
+    .sidebar.expanded ~ .sos {
+        margin-left: var(--sidebar-width);
+    }
+    
+    .sidebar.expanded {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about h1 {
+        font-size: 26px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .redes img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .trabajos-card img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    #clock {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar.expanded ~ .navbar {
+        width: 100%;
+        left: 0;
+    }
+}
