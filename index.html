@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<!-- SIDEBAR -->
+
 <aside class="sidebar">
 
-    <div class="sidebar-logo">
+    <div class="sidebar-logo" data-tooltip="/svenrtso">
         <img src="https://cdn.discordapp.com/avatars/1311740022596304897/1b54a1e317a2176189f2c4377cbb7be3.png">
     </div>
 
@@ -46,14 +46,12 @@
         </li>
     </ul>
 
-    <!-- BOTÓN INFERIOR -->
     <div class="sidebar-toggle" id="sidebarToggle">
         <i class="fas fa-angle-right"></i>
     </div>
 
 </aside>
 
-<!-- NAVBAR -->
 <nav class="navbar">
     <div class="navbar-title">
         Portafolio ・ <span id="color-red">SvenrtSO</span>
@@ -71,13 +69,53 @@
     toggleBtn.addEventListener("click", () => {
         sidebar.classList.toggle("expanded");
     });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sections = document.querySelectorAll("#about, #services, #experience, #contact");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function updateActive() {
+
+        let current = "";
+
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+            current = "contact";
+        } else {
+
+            let middle = window.scrollY + window.innerHeight / 2;
+
+            sections.forEach(section => {
+
+                const top = section.offsetTop;
+                const bottom = top + section.offsetHeight;
+
+                if (middle >= top && middle < bottom) {
+                    current = section.id;
+                }
+
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", updateActive);
+    window.addEventListener("load", updateActive);
+
+});
 </script>
 
 <div class="sos">
 
     <div id="particles-js"></div>
 
-    <div class="about-hero">
+    <div class="about-hero" id="about">
         <div class="about neon-rojo-hover">
             <h1 id="neon-rojo-hover">Sobre mi</h1>
             <p>Hola, soy un <span id="neon-rojo-hover"><strong>Developer</strong></span> y <span
@@ -90,7 +128,7 @@
         </div>
     </div>
 
-    <div class="servicios-hero neon-rojo-hover2">
+    <div class="servicios-hero neon-rojo-hover2" id="services">
         <h1>Mis <span id="color-red">Servicios</span></h1>
         <div class="servicios-1">
             <div class="neon-rojo-hover servicios-card">
@@ -136,7 +174,7 @@
     </div>
 
 
-    <div class="trabajos-hero">
+    <div class="trabajos-hero" id="experience">
         <h1>Experiencia en <span id="color-red">Servidores</span></h1>
         <div class="trabajos-1">
             <div class="neon-rojo-hover trabajos-card">
@@ -174,7 +212,7 @@
             </div>
 
             <div class="neon-rojo-hover trabajos-card">
-                <img src="https://cdn.discordapp.com/icons/1309028069289230427/d132b263f67c041911d0902f664e0c6f.png">
+                <img src="https://cdn.discordapp.com/icons/1309028069289230427/e19b772eadba7b1037c2e23285d68e15.png">
                 <h3 id="neon-rojo-hover">Nextasys</h3>
                 <div class="estado activo">
                     <span class="punto"></span>Builder
@@ -183,6 +221,32 @@
         </div>
     </div>
 
+
+<section class="contacto-hero" id="contact">
+    <h1><span id="color-red">Contacto</span></h1>
+
+    <div class="contacto-container">
+
+        <div class="contacto-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png">
+            <h3>WhatsApp</h3>
+            <p>Escríbeme rápido por WhatsApp.</p>
+            <a href="https://wa.me/3183918383" target="_blank">
+                Enviar mensaje
+            </a>
+        </div>
+
+        <div class="contacto-card">
+            <img src="https://images.icon-icons.com/3132/PNG/512/discord_social_network_communication_interaction_message_icon_192260.png" alt="Discord">
+            <h3>Discord</h3>
+            <p>Contáctame directamente por Discord.</p>
+            <a href="https://discord.com/users/1311740022596304897" target="_blank">
+                Ir a Discord
+            </a>
+        </div>
+
+    </div>
+</section>
 </body>
 
 <footer>
@@ -214,4 +278,3 @@
 <script src="js/script.js"></script>
 
 </html>
-<!-- <span id="clock">00:00:00</span> -->
