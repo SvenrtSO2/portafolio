@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio ・ SvenrtSO</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/light-theme.png">
+    <link rel="icon" href="img/light-theme.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="img/dark-theme.png" media="(prefers-color-scheme: light)">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -61,55 +62,6 @@
         <span id="clock">Reloj</span>
     </div>
 </nav>
-
-<script>
-    const sidebar = document.querySelector(".sidebar");
-    const toggleBtn = document.getElementById("sidebarToggle");
-
-    toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("expanded");
-    });
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const sections = document.querySelectorAll("#about, #services, #experience, #contact");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    function updateActive() {
-
-        let current = "";
-
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-            current = "contact";
-        } else {
-
-            let middle = window.scrollY + window.innerHeight / 2;
-
-            sections.forEach(section => {
-
-                const top = section.offsetTop;
-                const bottom = top + section.offsetHeight;
-
-                if (middle >= top && middle < bottom) {
-                    current = section.id;
-                }
-
-            });
-        }
-
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === "#" + current) {
-                link.classList.add("active");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", updateActive);
-    window.addEventListener("load", updateActive);
-
-});
-</script>
 
 <div class="sos">
 
