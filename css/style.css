@@ -8,6 +8,8 @@
     --light_red: #ff0000;
     --red: #c90000;
     --dark_red: #a30000;
+    --ultra_dark_red: #830000;
+    --ultra_dark_red2: #740101;
     --blur_red: #ff00000d;
 
     --light_black: #050505;
@@ -36,6 +38,28 @@
     --sidebar-expanded: 220px;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ultra_dark_gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--red);
+    border-radius: 3px;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark_red);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--ultra_dark_red2);
+}
+
 header {
     padding: 2rem 0;
 }
@@ -57,7 +81,7 @@ img,video,svg {
 
 .sos {
     margin-left: var(--sidebar-width);
-    padding-top: 80px; /* espacio para navbar */
+    padding-top: 80px;
     transition: margin-left 0.3s ease;
 }
 
@@ -191,8 +215,8 @@ img,video,svg {
     background-color: var(--ultra_dark_gray2);
     border-radius: 20px;
     border: 0.1px solid var(--ultra_dark_gray);
-    width: 250px;
-    height: 240px;
+    width: 290px;
+    height: 260px;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s;
@@ -207,6 +231,12 @@ img,video,svg {
     border-radius: 37px;
     width: 125px;
     height: 125px;
+}
+
+.neon-rojo #neon-rojo {
+    color: var(--red);
+    text-shadow: 
+        0 0 5px var(red);
 }
 
 .neon-rojo-hover #neon-rojo-hover {
@@ -301,13 +331,17 @@ footer {
 }
 
 .estado .punto {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
 }
 
 .estado.activo {
     color: var(--light_green);
+    background-color: var(--blur_green);
+    border-radius: 15px;
+    padding: 10px 0px 10px 0px;
+    margin: 20px 0px 0px 0px;
 }
 
 .estado.activo .punto {
@@ -318,6 +352,10 @@ footer {
 
 .estado.inactivo {
     color: var(--light_red);
+    background-color: var(--blur_red);
+    border-radius: 15px;
+    padding: 10px 0px 10px 0px;
+    margin: 20px 0px 0px 0px;
 }
 
 .estado.inactivo .punto {
@@ -325,6 +363,34 @@ footer {
     box-shadow: 0 0 6px var(--light_red);
     animation: pulse-red 2s infinite;
 }
+
+/*
+.sidebar-logo {
+    position: relative;
+}
+
+.sidebar-logo::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 70px;
+    top: 90px;
+    transform: translateY(-50%);
+    background: var(--ultra_dark_gray);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    box-shadow: 0 0 8px var(--red);
+}
+
+.sidebar-logo:hover::after {
+    opacity: 1;
+}
+*/
 
 .sidebar {
     position: fixed;
@@ -365,7 +431,7 @@ footer {
 .sidebar.expanded .sidebar-logo img {
     filter: drop-shadow(0 0 0px var(--red))
             drop-shadow(0 0 7px var(--red));
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .sidebar-nav {
@@ -453,6 +519,79 @@ footer {
 .navbar-title {
     font-weight: 600;
     letter-spacing: 1px;
+}
+
+.contacto-hero {
+    padding: 80px 40px;
+}
+
+.contacto-hero h1 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+.contacto-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contacto-card {
+    width: 320px;
+    padding: 40px;
+    background-color: var(--ultra_dark_gray2);
+    border-radius: 20px;
+    border: 0.1px solid var(--ultra_dark_gray);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.contacto-card:hover {
+    border: 0.1px solid var(--red);
+    transform: translateY(-6px);
+}
+
+.contacto-card img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    transition: 0.4s ease;
+}
+
+.contacto-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+    filter:
+            drop-shadow(0 0 6px var(--red))
+            drop-shadow(0 0 10px var(--red));
+}
+
+.contacto-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.contacto-card p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.contacto-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contacto-card a:hover {
+    background: var(--dark_red);
+    box-shadow: 0 0 10px var(--red);
 }
 
 #particles-js{
@@ -607,5 +746,13 @@ footer {
     .sidebar.expanded ~ .navbar {
         width: 100%;
         left: 0;
+    }
+    .contacto-hero {
+    padding: 40px 15px;
+    }
+
+    .contacto-hero h1 {
+    text-align: center;
+    margin-left: 0;
     }
 }
